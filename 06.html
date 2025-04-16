@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 语法练习2 - 替换内容版</title>
+    <script>
+        // 类和对象
+        // 1. 定义一个类
+        class Pet {
+            // 构造函数
+            constructor(name, age, breed, color) {
+                this.name = name;
+                this.age = age;
+                this.breed = breed;
+                this.color = color;
+            }
+            // 方法
+            eat(food = "狗粮") {
+                console.log(`${this.name}正在吃${food}，吃得很香！`);
+            }
+            play() {
+                console.log(`${this.name} 正在玩耍`);
+            }
+        }
+        // 2. 创建对象
+        let wangcai = new Pet("旺财", 2, "中华田园犬", "黄色");
+        wangcai.eat("骨头");
+        wangcai.play();
+
+        class Cat extends Pet {
+            constructor(name, age, breed, color, furLength) {
+                super(name, age, breed, color);
+                this.furLength = furLength;
+            }
+
+            nap() {
+                console.log(`${this.name}在睡午觉，呼噜呼噜`);
+                console.log(super.play())
+            }
+        }
+
+        let mimi = new Cat("咪咪", 1, "布偶猫", "白色", "长毛");
+        mimi.nap();
+
+        // 回调函数，函数作为参数传递给另一个函数
+        console.log("开始计时啦！");
+
+        setTimeout(function () { console.log("时间到！") }, 1000);
+
+        console.log("等待中...");
+    </script>
+</head>
+
+<body>
+    <h1 id="demo" onclick="alert('别戳我啦！')">这是宠物小天地</h1>
+    <div>
+        <p id="anotherp">宠物们的日常趣事</p>
+    </div>
+
+    <script>
+        let myh1 = document.getElementById("demo");
+        console.log(myh1);
+        // 1. 改变元素的内容
+        myh1.innerHTML = "欢迎来到宠物乐园！";
+        // 2. 改变元素的样式
+        myh1.style.color = "#FF69B4";
+
+        let myp = document.getElementById("anotherp");
+        myp.onclick = function () {
+            alert("来看看宠物们的故事吧！");
+        }
+
+        window.onload = function () {
+            alert("宠物乐园加载完成！");
+        }
+    </script>
+</body>
+
+</html>
