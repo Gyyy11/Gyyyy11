@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 核心语法学习二</title>
+    <script>
+        let price = 200
+        // alert(price)
+        console.log(price)
+        const discount_code = 'SAVE20'
+        console.log(discount_code)
+        console.log(typeof price, typeof discount_code, typeof false)
+        let discount = '10'
+        console.log(price + discount)
+        console.log(price + Number(discount))
+        let final_price = '200'
+        console.log(typeof price, typeof final_price)
+        console.log(price == final_price)
+        console.log(price === final_price)
+        // 分支语句
+        let stock_status = '有货'
+        if (stock_status == '有货') {
+            console.log('可以下单！')
+        } else {
+            console.log('暂时缺货……')
+        }
+        // for循环
+        for (let j = 1; j <= 5; j++) {
+            console.log('第 ' + j + ' 次检查库存')
+        }
+        // while循环
+        let remaining_stock = 80
+        while (remaining_stock > 0) {
+            console.log('还剩 ' + remaining_stock + ' 件商品')
+            remaining_stock = remaining_stock - 20
+        }
+        // 函数
+        function shop_intro() {
+            console.log('欢迎光临我们的商店！')
+        }
+        shop_intro()
+        function product_intro(product) {
+            console.log('商品介绍： ' + String(product))
+        }
+        console.log(typeof product_intro('新款运动鞋'))
+        function promotion_intro(promotion1, promotion2) {
+            console.log('促销活动： ' + String(promotion1) + ' 和 ' + String(promotion2))
+        }
+        promotion_intro('满减活动', '折扣券', '赠品活动')
+        function order_summary(order) {
+            console.log('订单信息： ' + order)
+            return order + ' - 订单处理完成'
+        }
+        order_summary('已下单商品')
+        let order_result = order_summary('已下单商品')
+        console.log(order_result)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
